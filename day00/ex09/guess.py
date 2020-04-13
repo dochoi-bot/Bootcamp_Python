@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    guess.py                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dochoi </var/mail/dochoi>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/14 06:09:03 by dochoi            #+#    #+#              #
+#    Updated: 2020/04/14 07:07:13 by dochoi           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 import random
 import sys
@@ -22,7 +33,7 @@ if __name__ == "__main__":
             continue
         n_int = int(n)
         if (n_int < 1 or n_int > 99):
-            print("The number must be between 1 and 10.")
+            print("The number must be between 1 and 99.")
         elif answer > n_int:
             print("Too low!")
         elif answer < n_int:
