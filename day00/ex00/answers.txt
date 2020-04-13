@@ -1,4 +1,4 @@
-pip list
+pip list | awk '{print $1}'
 pip list --format columns
 pip show numpy
 pip search PyPI "tesseract"
