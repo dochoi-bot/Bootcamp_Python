@@ -6,22 +6,25 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/14 01:26:45 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/14 06:10:08 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/14 08:25:54 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-nested_dict = { 'sandwich': {'ingredients': ['ham', 'bread', 'cheese'],
+nested_dict = {'sandwich': {'ingredients': ['ham', 'bread', 'cheese'],
                             'meal': 'lunch',
                             'prep_time': 10},
-                'cake': {'ingredients': ['flour', 'sugar', 'eggs'],
-                         'meal': 'dessert',
-                         'prep_time': 60},
-                'salad': {'ingredients': ['avocado', 'arugula', 'tomatoes', 'spinach'],
-                          'meal': 'lunch',
-                          'prep_time': 15}}
+               'cake': {'ingredients': ['flour', 'sugar', 'eggs'],
+                        'meal': 'dessert',
+                        'prep_time': 60},
+               'salad': {'ingredients': ['avocado', 'arugula',
+                                         'tomatoes', 'spinach'],
+                         'meal': 'lunch',
+                         'prep_time': 15}}
+
 
 def print_menu():
     print("Please select an option by typing the corresponding number:\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit")
+
 
 def add_recipe():
     ing_list = []

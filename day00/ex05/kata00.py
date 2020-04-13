@@ -6,9 +6,9 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/14 01:06:23 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/14 01:06:24 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/14 08:18:20 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-t = (19,42,21)
-print("The", len(t), "numbers are:",(str)(t)[1:-1])
+t = (19, 42, 21)
+print("The", len(t), "numbers are:", (str)(t)[1:-1])

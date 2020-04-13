@@ -6,9 +6,9 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/14 01:08:04 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/14 01:13:37 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/14 08:21:21 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-phrase ="The right format"
+phrase = "The right format"
 print(phrase.rjust(41, '-'))
