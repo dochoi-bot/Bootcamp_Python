@@ -1,0 +1,5 @@
+pip list
+pip list --format columns
+pip show numpy
+pip search PyPI "tesseract"
+pip freeze > requirements.txt
