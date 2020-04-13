@@ -6,7 +6,7 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/14 01:26:45 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/14 03:23:38 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/14 03:42:08 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ nested_dict = { 'sandwich': {'ingredients': ['ham', 'bread', 'cheese'],
                 'salad': {'ingredients': ['avocado', 'arugula', 'tomatoes', 'spinach'],
                           'meal': 'lunch',
                           'prep_time': 15}}
-                
+
 def print_menu():
     print("Please select an option by typing the corresponding number:\n1: Add a recipe\n2: Delete a recipe\n3: Print a recipe\n4: Print the cookbook\n5: Quit")
 
@@ -43,8 +43,14 @@ def add_recipe():
             break
     print("\nPlease enter type of meal")
     meal = input()
-    print("\nPlease enter preparation time in minutes")
-    time = input()
+    time = ""
+    while True:
+        print("\nPlease enter preparation time in minutes")
+        time = input()
+        if time.isdecimal():
+            break
+        else:
+            print("\n error : only number")
     nested_dict[name] = {'ingredients': ing_list, 'meal': meal, 'prep_time': time}
     print("add complete\n")
     print_menu()
@@ -63,7 +69,7 @@ def show_recipe():
     print("\nPlease enter your recipe name")
     name = input()
     if name in nested_dict:
-        print("\nRecipe for", name + "\nIngredients list:", nested_dict[name]['ingredients'], "\nTo be eatne for", nested_dict[name]['meal'] + ".\nTake", nested_dict[name]['prep_time'], "minutes of cooking.\n")
+        print("\nRecipe for", name + "\nIngredients list:", nested_dict[name]['ingredients'], "\nTo be eaten for", nested_dict[name]['meal'] + ".\nTake", nested_dict[name]['prep_time'], "minutes of cooking.\n")
     else:
         print("not found\n")
     print_menu()
