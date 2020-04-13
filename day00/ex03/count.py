@@ -1,4 +1,7 @@
 def text_analyzer(s=0):
+    '''
+    This function counts the number of upper characters, lower characters, punctuation and spaces in a given text.
+    '''
     ul_n  = 0
     ll_n = 0
     pm_n = 0
