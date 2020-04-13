@@ -11,5 +11,5 @@ else:
             print("I'm Even.")
         else:
             print("I'm Odd.")
-    except:
+    except ValueError:
         print("ERROR")
