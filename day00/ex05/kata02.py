@@ -1,27 +1,14 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    whois.py                                           :+:      :+:    :+:    #
+#    kata02.py                                          :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/04/14 01:07:01 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/14 01:07:02 by dochoi           ###   ########.fr        #
+#    Created: 2020/04/14 01:06:42 by dochoi            #+#    #+#              #
+#    Updated: 2020/04/14 01:06:45 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import sys 
-
-index = len(sys.argv) - 1
-if len(sys.argv) != 2:
-    print("ERROR")
-else:
-    try:
-        if (int)(sys.argv[1]) == 0:
-            print("I'm Zero.")
-        elif (int)(sys.argv[1]) % 2 == 0:
-            print("I'm Even.")
-        else:
-            print("I'm Odd.")
-    except ValueError:
-        print("ERROR")
+t = (3,30,2019,9,25)
+print("%02d/%02d/%04d %02d:%02d" % (t[3], t[4], t[2], t[0], t[1]))
