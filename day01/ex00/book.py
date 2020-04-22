@@ -1,17 +1,15 @@
 import traceback
-
-class book:
-    """ this is Recipe """
-    def __init__(self, name, recipes_list):
+import time
+class Book:
+    """ this is book """
+    allowed = ["starter", "lunch", "dessert"]
+    def __init__(self, name):
         """ init function"""
-        allowed = ["starter", "lunch", "dessert"]
         try :
             self.name = str(name)
-            self.cooking_lvl = int(cooking_lvl)
-            self.cooking_time = int(cooking_time)
-            self.ingredients = list(ingredients)
-            self.description = str(description)
-            self.recipe_type = str(recipe_type)
+            self.recipes_list = {"starter" : [], "lunch" : [], "dessert" : []}
+            self.creation_date = time.strftime('%c', time.localtime(time.time()))
+            self.last_update = self.creation_date
         except TypeError :
             lines = traceback.format_exc().strip().split('\n')
             print(lines[2])
@@ -19,16 +17,30 @@ class book:
         if len(name) == 0:
             print("The name cannot be blank.")
             raise ValueError
-        if recipe_type not in allowed:
+
+    def get_recipe_by_name(self, name):
+        """Print a recipe with the name `name` and return the instance"""
+        for i in Book.allowed:
+            for recipe in self.recipes_list[i]:
+                if recipe.name == name:
+                    print(str(recipe))
+                    return recipe
+        print("can't found")
+
+    def get_recipes_by_types(self, recipe_type):
+        """Get all recipe names for a given recipe_type """
+        if recipe_type not in Book.allowed:
             print("The recipe_type can be one of ", allowed)
             raise ValueError
+        for i in self.recipes_list[recipe_type]:
+            print(i.name)
+
+    def add_recipe(self, recipe):
+        """Add a recipe to the book and update last_update"""
+        self.recipes_list[recipe.recipe_type].append(recipe)
+        self.last_update = time.strftime('%c', time.localtime(time.time()))
+
     def __str__(self):
         """Return the string to print with the recipe info"""
-        txt = ("name : [" + self.name +"]\ndescription : [" + self.description + "]" )
+        txt = ("name : [" + self.name +"]\nrecipes_list : " + str(self.recipes_list) )
         return txt
-
-if __name__ == "__main__":
-
-    tourte = Recipe("bread", 1, 5, ["milk" , "egg"], "lunch")
-    print(str(tourte))
-    print(tourte.name)

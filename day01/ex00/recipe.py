@@ -1,6 +1,6 @@
 import traceback
 
-class Recipe:
+class Recipe(object):
     """ this is Recipe """
     def __init__(self, name, cooking_lvl, cooking_time,
                  ingredients, recipe_type,  description=""):
@@ -27,9 +27,3 @@ class Recipe:
         """Return the string to print with the recipe info"""
         txt = ("name : [" + self.name +"]\ndescription : [" + self.description + "]" )
         return txt
-
-if __name__ == "__main__":
-
-    tourte = Recipe("bread", 1, 5, ["milk" , "egg"], "lunch")
-    print(str(tourte))
-    print(tourte.name)
