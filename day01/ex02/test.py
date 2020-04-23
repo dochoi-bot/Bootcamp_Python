@@ -1,4 +1,4 @@
-import Vector from vector
+from vector import Vector
 a = Vector((10,15))
 b = Vector((5,10))
 print(a.values)
