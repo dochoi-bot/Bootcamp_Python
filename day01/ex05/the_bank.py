@@ -6,7 +6,7 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/25 03:05:54 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/25 04:55:34 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/25 05:00:43 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ class Account(object):
         self.id = self.ID_COUNT
         self.name = name
         self.__dict__.update(kwargs)
-        if not hasattr(self, "value"):
+        if not hasattr(self, "value"): # I think the pdf's code is wrong. It is right.
             self.value = 0
         Account.ID_COUNT += 1
 
