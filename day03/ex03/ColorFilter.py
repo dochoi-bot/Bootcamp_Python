@@ -6,7 +6,7 @@
 #    By: dochoi <dochoi@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/26 20:54:08 by dochoi            #+#    #+#              #
-#    Updated: 2020/04/27 04:43:44 by dochoi           ###   ########.fr        #
+#    Updated: 2020/04/27 18:17:06 by dochoi           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ class ColorFilter(object):
             return 1.0
         vfunc = np.vectorize(myfunc)
         return vfunc(array)
-    def to_grayscale(self, array, filter='w'):
+    def to_grayscale(self, array, filter='w', weights=[0.299,0.587, 0.114]):
 
         if filter == 'm' or 'mean':
             """Authorized function : .sum, .shape, reshape, broadcast_to, (as_type?)
@@ -67,7 +67,7 @@ class ColorFilter(object):
         elif filter == 'w' or 'weigthed':
             """Authorized function : .sum, .shape, .tile
             Authorized operator: *"""
-            base = np.tile([0.299,0.587, 0.114], (200, 200, 1))
+            base = np.tile(weights, (array.shape[0], array.shape[1], 1))
             return np.sum((array[:,:,:3] * base),axis=2)
         return None
 # te = ColorFilter()
@@ -77,7 +77,7 @@ class ColorFilter(object):
 # print(*arr.shape)
 # ar2 = te.to_grayscale(arr, filter='mean')
 # plt.imshow(ar2, cmap='gray')
-# # plt.imshow(ar2)
+# # # plt.imshow(ar2)
 # plt.show()
-# plt.imshow(arr)
-# plt.show()
+# # plt.imshow(arr)
+# # plt.show()
